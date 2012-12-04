@@ -17,7 +17,7 @@
                 <td style="border-top: 2px solid red">
                     @Html.DropDownListFor(x => x.RedOffensive, new SelectList(Model.Scores, "Id", "Name"))
                     @Html.DropDownListFor(x => x.RedDefensive, new SelectList(Model.Scores, "Id", "Name"))
-                    @Html.DropDownListFor(x => x.ScoreRed, Enumerable.Range(0, 26).Select(x => new SelectListItem() { Text = x.ToString(), Value = x.ToString() }))
+                    @Html.DropDownListFor(x => x.ScoreRed, Enumerable.Range(0, 11).Select(x => new SelectListItem() { Text = x.ToString(), Value = x.ToString() }))
                 </td>
             </tr>
             <tr>
@@ -29,7 +29,7 @@
                 <td style="border-bottom: 2px solid blue;">
                     @Html.DropDownListFor(x => x.BlueDefensive, new SelectList(Model.Scores, "Id", "Name"))
                     @Html.DropDownListFor(x => x.BlueOffensive, new SelectList(Model.Scores, "Id", "Name"))
-                    @Html.DropDownListFor(x => x.ScoreBlue, Enumerable.Range(0, 26).Select(x => new SelectListItem() { Text = x.ToString(), Value = x.ToString() }))
+                    @Html.DropDownListFor(x => x.ScoreBlue, Enumerable.Range(0, 11).Select(x => new SelectListItem() { Text = x.ToString(), Value = x.ToString() }))
                 </td>
             </tr>
         </tbody>

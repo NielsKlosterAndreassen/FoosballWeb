@@ -24,9 +24,9 @@ namespace FoossballPlayars.CommandContext
             ScoresNotEqual();
             if (!IsValid) { return; }
             WinningScoreAtLeastTen();
-            if (!IsValid) { return; }
-            ScoreDiffIsValid();
-            if (!IsValid) { return; }
+			//if (!IsValid) { return; }
+			//ScoreDiffIsValid();
+			//if (!IsValid) { return; }
         }
 
         private void ScoresNotNegative()
