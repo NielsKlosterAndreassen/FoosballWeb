@@ -1,6 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2B03BC0E-3512-4B7B-8684-C9F220480CB0}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing", "EventSourcing\EventSourcing.csproj", "{8E147BE6-F3AA-4C3C-94EC-E19D5F2F2091}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoossballPlayars", "FoossballPlayars\FoossballPlayars.csproj", "{17803B39-56A5-4D03-AF98-B95DB1C590BB}"
@@ -12,13 +19,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilePersistance", "FilePersistance\FilePersistance.csproj", "{18F8BCBF-CEFE-4F97-BDAF-880EC2AE4DFD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RavenMigration", "RavenMigration\RavenMigration.csproj", "{99615F42-4DEF-43EB-BF0C-D1E93B87D40E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2B03BC0E-3512-4B7B-8684-C9F220480CB0}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoossballWeb", "FoossballWeb\FoossballWeb.csproj", "{A941F9E4-469B-4761-BA60-84D1F34F0CE1}"
 EndProject
