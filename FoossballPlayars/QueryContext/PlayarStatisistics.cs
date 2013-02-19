@@ -6,9 +6,8 @@ namespace FoossballPlayars.QueryContext
 {
     public class PlayarStatisistics
     {
-    	public const double InitialScore = 0;
-    	public const int InplayGames = 10;
-
+    	public const double InitialScore = 100;
+    	public const int InplayGames = 0;
     	private const int KeepLatestResults = 100;
 
     	public Guid Id { get; private set; }
