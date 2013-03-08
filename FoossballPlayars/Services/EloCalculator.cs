@@ -14,14 +14,14 @@ namespace FoossballPlayars.Services
 
 		protected override Events.Score GetWinningScore(PlayarStatisistics playar, double winningPrice)
 		{
-			if (playar.Total.GamesPlayed > PlayarStatisistics.InplayGames)
+			if (playar.Total.GamesPlayed >= PlayarStatisistics.InplayGames)
 				return base.GetWinningScore(playar, winningPrice);
 			return base.GetWinningScore(playar, 300);
 		}
 
 		protected override Events.Score GetLoosingScore(PlayarStatisistics playar, double winningPrice)
 		{
-			if (playar.Total.GamesPlayed > PlayarStatisistics.InplayGames)
+			if (playar.Total.GamesPlayed >= PlayarStatisistics.InplayGames)
 				return base.GetLoosingScore(playar, winningPrice);
 			return base.GetLoosingScore(playar, 0);
 		}
