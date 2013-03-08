@@ -77,9 +77,9 @@ namespace FoossballWeb.App_Start
 		private static RaventEventStorage GetEventStorage(IBus eventBus)
 		{
 #if DEBUG
-            var eventStorage = new ReadOnlyRavenEventStorage(new ServerStoreFactory(), eventBus);
+			var eventStorage = new ReadOnlyRavenEventStorage(new ServerStoreFactory(), eventBus);
 #else
-    		var eventStorage = new RaventEventStorage(new ServerStoreFactory(), eventBus);
+			var eventStorage = new RaventEventStorage(new ServerStoreFactory(), eventBus);
 #endif
 			return eventStorage;
 		}
