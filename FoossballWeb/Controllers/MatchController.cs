@@ -19,8 +19,11 @@ namespace FoossballWeb.Controllers
 
 		public JsonResult Create(string redOffensive, string redDefensive, string blueOffensive, string blueDefensive, int scoreRed, int scoreBlue)
 		{
-			var players = _scoreQuery.GetAllPlayers().ToDictionary(x=>x.Name.ToString(), x=>x.Id);
-
+			var players = _scoreQuery.GetAllPlayers().ToDictionary(x => x.Name.ToString(), x => x.Id);
+			foreach (var missingPlayer in new[] { redOffensive, redDefensive, blueOffensive, blueDefensive }.Where(x => !players.ContainsKey(x)))
+			{
+				_commandBus.Raise(new RegisterPlayarCommand(missingPlayer));
+			}
 			_commandBus.Raise(new PlayGameCommand(players[redOffensive], players[redDefensive], players[blueOffensive], players[blueDefensive], scoreRed, scoreBlue));
 
 			return Json("Ok");
