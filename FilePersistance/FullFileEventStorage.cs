@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Ankiro.Framework.Tools.Bus;
 using EventSourcingTest;
 using EventSourcingTest.Interfaces;
 

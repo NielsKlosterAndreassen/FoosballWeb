@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using Ankiro.Framework.Tools.Bus;
+using EventSourcingTest.Interfaces;
 using FoossballPlayars.Commands;
 using FoossballPlayars.QueryContext;
 using FoossballWeb.Models;

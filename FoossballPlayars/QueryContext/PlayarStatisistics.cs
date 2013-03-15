@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Ankiro.Framework.Queuing;
+using EventSourcingTest;
 
 namespace FoossballPlayars.QueryContext
 {

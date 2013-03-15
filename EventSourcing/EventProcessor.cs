@@ -1,14 +1,14 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Ankiro.Framework.Queuing;
 
 namespace EventSourcingTest
 {
     public class EventProcessor<T> where T : class
     {
         private readonly Action<T> _action;
-        private readonly IBlockingQueue<T> _queue = new BlockingQueue<T>();
+		private readonly BlockingCollection<T> _queue = new BlockingCollection<T>();
 
         public EventProcessor(Action<T> action)
         {
@@ -19,12 +19,12 @@ namespace EventSourcingTest
         public void Add(IEnumerable<T> @events)
         {
             foreach (var enlisted in @events)
-                _queue.Enqueue(enlisted);
+                _queue.Add(enlisted);
         }
 
         public void Add(T @event)
         {
-            _queue.Enqueue(@event);
+            _queue.Add(@event);
         }
 
         private void Process()

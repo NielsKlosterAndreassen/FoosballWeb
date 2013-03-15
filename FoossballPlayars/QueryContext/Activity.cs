@@ -1,5 +1,4 @@
 using System;
-using Ankiro.Framework.Extensions;
 
 namespace FoossballPlayars.QueryContext
 {
@@ -16,7 +15,7 @@ namespace FoossballPlayars.QueryContext
 
 		public override string ToString()
 		{
-			return Message + " " + Timestamp.ToPrettyString();
+			return Message + " " + Timestamp;
 		}
 	}
 }

@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ankiro.Framework.Extensions;
-using Ankiro.Framework.Tools.Bus;
 using EventSourcingTest.Interfaces;
 
 namespace EventSourcingTest
@@ -44,8 +42,6 @@ namespace EventSourcingTest
 		private TAggregateRoot Load(Guid id)
 		{
 		    var events = _aggregateRootStorage.GetEventsForRoot<TAggregateRoot>(id);
-            if (!events.HasAny())
-                return null;
 			var user = CreateInstance(id, events);
 			_users.Add(id, user);
 			return user;

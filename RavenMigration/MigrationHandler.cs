@@ -1,4 +1,3 @@
-using Ankiro.Framework.Tools.Bus;
 using EventSourcingTest;
 using EventSourcingTest.Interfaces;
 using FoossballPlayars.Events;

@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ankiro.Framework">
-      <HintPath>..\lib\Ankiro.Framework\Ankiro.Framework.dll</HintPath>
-    </Reference>
     <Reference Include="BouncyCastle.Crypto">
       <HintPath>..\packages\RavenDB.Database.1.0.888\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>

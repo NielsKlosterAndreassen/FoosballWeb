@@ -1,10 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using Ankiro.Framework.Extensions;
-using Ankiro.Framework.Tools;
-using Ankiro.Framework.Tools.Bus;
 using EventSourcingTest;
 using EventSourcingTest.Interfaces;
 using Raven.Client;
@@ -21,8 +17,7 @@ namespace RavenPersistance
             _documentStore = storeFactory.BuildStore;
             using (var session = _documentStore.OpenSession())
             {
-                var events = GetAllEvents(session).WithPerformanceLogging(100, "events", x=>Debug.WriteLine(x)).ToList();
-                foreach (var @event in events
+                foreach (var @event in GetAllEvents(session)
 					//.OrderByDescending(x => (x as Event).Date)
 					)
                 {
@@ -42,7 +37,21 @@ namespace RavenPersistance
                     .Take(batchSize)
                     .Skip(offset)
                     .ToList();
-            return batchFunction.BatchToStream(128);
+	        var of = 0;
+	        var bs = 128;
+	        while (true)
+	        {
+		        var results = batchFunction(of, bs);
+				if (!results.Any())
+				{
+					break;
+				}
+		        foreach (var result in results)
+		        {
+			        yield return result;
+		        }
+		        of += 128;
+	        }
         }
         
         public IEnumerable<dynamic> GetEventsForRoot<TAggregateRoot>(Guid id) where TAggregateRoot : AggregateRoot

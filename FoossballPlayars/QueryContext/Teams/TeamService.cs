@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ankiro.Framework.Tools.Bus;
+using EventSourcingTest.Interfaces;
 using FoossballPlayars.Events;
 using FoossballPlayars.Services;
 

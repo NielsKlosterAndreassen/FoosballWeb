@@ -1,5 +1,4 @@
-﻿@using Ankiro.Framework.Extensions
-@model FoossballWeb.Models.PlayarDetailsViewModel
+﻿@model FoossballWeb.Models.PlayarDetailsViewModel
            @{
                ViewBag.Title = @Model.PlayarStatisistics.Name;
 }
@@ -16,7 +15,7 @@
 		data.addColumn('string', 'Date');
 		data.addColumn('number', 'Score');
 		data.addRows([
-				@Html.Raw(Model.PlayarStatisistics.ScoreHistory.Select(x => string.Format("['{0}', {1}]", x.Item2, x.Item1)).ToAggregateString(",\n"))
+				@Html.Raw(Model.PlayarStatisistics.ScoreHistory.Select(x => string.Format("['{0}', {1}]", x.Item2, x.Item1)).Select(x=>x.ToString()).Aggregate((x,y)=> x + ",\n" + y))
             ]);
 
         var options = {
@@ -50,8 +49,8 @@
         if (Model.PlayarStatisistics.Badges.Any())
         {
             <b style="color: red;">
-                @Html.Raw(Model.PlayarStatisistics.Badges.ToAggregateString("<br/> "))</b>                
-        }
+                @Html.Raw(Model.PlayarStatisistics.Badges.Select(x=>x.ToString()).Aggregate((x,y)=> x + "<br/> " + y))</b>
+		}
 	}
 
 </div>

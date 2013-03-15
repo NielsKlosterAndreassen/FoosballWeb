@@ -33,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ankiro.Framework, Version=0.0.240.15843, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\Ankiro.Framework\Ankiro.Framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -48,17 +44,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AggregateRoot.cs" />
+    <Compile Include="DomainBus.cs" />
     <Compile Include="InMemoryAggregateRootStorage.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventProcessor.cs" />
     <Compile Include="InMemoryEventStorage.cs" />
+    <Compile Include="Interfaces\Handles.cs" />
     <Compile Include="Interfaces\IAggregateRoot.cs" />
     <Compile Include="Interfaces\IAggregateRootStorage.cs" />
+    <Compile Include="Interfaces\IBus.cs" />
     <Compile Include="Interfaces\IEventStorage.cs" />
     <Compile Include="Interfaces\ISession.cs" />
     <Compile Include="Interfaces\ISessionFactory.cs" />
     <Compile Include="Interfaces\ISessionItem.cs" />
     <Compile Include="Interfaces\IUncommittedEvents.cs" />
+    <Compile Include="LimitedQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Session.cs" />

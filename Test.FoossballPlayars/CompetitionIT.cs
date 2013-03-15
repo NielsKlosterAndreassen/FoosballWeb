@@ -1,6 +1,6 @@
 using System.Linq;
-using Ankiro.Framework.Tools.Bus;
 using EventSourcingTest;
+using EventSourcingTest.Interfaces;
 using FoossballPlayars.Commands;
 using FoossballPlayars.QueryContext;
 using FoossballPlayars.Services;

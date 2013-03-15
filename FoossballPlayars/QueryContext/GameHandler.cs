@@ -1,5 +1,5 @@
-using Ankiro.Framework.Tools.Bus;
 using FoossballPlayars.Events;
+using EventSourcingTest.Interfaces;
 
 namespace FoossballPlayars.QueryContext
 {

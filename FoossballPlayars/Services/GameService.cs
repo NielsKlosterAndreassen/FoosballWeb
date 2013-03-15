@@ -1,5 +1,4 @@
 using System;
-using Ankiro.Framework.Tools.Bus;
 using EventSourcingTest.Interfaces;
 using FoossballPlayars.CommandContext;
 using FoossballPlayars.Commands;
