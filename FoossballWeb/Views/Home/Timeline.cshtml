@@ -16,7 +16,7 @@
         }
          @foreach(var name in Model.GetScores())
         {
-            @Html.Raw(string.Format("data.addRow(['{0}', {1}]);\n", name.Key.ToShortDateString(), name.Value.Select(x=>x.Score).ToAggregateString(",")))
+            @Html.Raw(string.Format("data.addRow(['{0}', {1}]);\n", name.Key.ToShortDateString(), name.Value.Select(x=>x.Score).Select(x=>x.ToString()).Aggregate((x,y)=>x + ',' + y)))
         }
 //        data.addColumn('number', 'Niels');
         //data.addColumn('number', 'Morten');
