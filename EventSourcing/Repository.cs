@@ -42,6 +42,10 @@ namespace EventSourcingTest
 		private TAggregateRoot Load(Guid id)
 		{
 		    var events = _aggregateRootStorage.GetEventsForRoot<TAggregateRoot>(id);
+			if (events == null)
+			{
+				events = Enumerable.Empty<dynamic>();
+			}
 			var user = CreateInstance(id, events);
 			_users.Add(id, user);
 			return user;
